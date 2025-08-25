@@ -16,10 +16,11 @@ import {
     ListItemText,
     useScrollTrigger,
 } from "@mui/material";
-import { alpha, styled } from "@mui/material/styles";
+import { alpha } from "@mui/material/styles";
 import MenuRounded from "@mui/icons-material/MenuRounded";
 import SearchRounded from "@mui/icons-material/SearchRounded";
 import CloseRounded from "@mui/icons-material/CloseRounded";
+import { NavButton } from "./NavButton";
 
 interface NavLinkItem { label: string; }
 const navLinks: NavLinkItem[] = [
@@ -29,27 +30,6 @@ const navLinks: NavLinkItem[] = [
     // { label: "My List" },
 ];
 
-// Search pill that expands on focus (desktop)
-const SearchRoot = styled("form")(({ theme }) => ({
-    position: "relative",
-    borderRadius: 999,
-    backgroundColor: alpha(theme.palette.common.white, 0.06),
-    border: `1px solid ${alpha(theme.palette.common.white, 0.12)}`,
-    display: "none", // hidden on xs; shown from sm+
-    alignItems: "center",
-    gap: 6,
-    padding: "2px 8px",
-    width: 200,
-    transition: theme.transitions.create(["width", "background-color", "border-color"], { duration: 200 }),
-    [theme.breakpoints.up("sm")]: { display: "flex" },
-    "&:hover": { backgroundColor: alpha(theme.palette.common.white, 0.10) },
-    "&:focus-within": {
-        width: 320,
-        backgroundColor: alpha(theme.palette.common.white, 0.12),
-        borderColor: alpha(theme.palette.common.white, 0.2),
-    },
-}));
-
 export default function Header({ brand = "AniFlix" }: { brand?: string }) {
     const [query, setQuery] = useState("");
     const [active, setActive] = useState<NavLinkItem["label"]>("Home");
@@ -58,10 +38,10 @@ export default function Header({ brand = "AniFlix" }: { brand?: string }) {
     const trigger = useScrollTrigger({ threshold: 8 });
     const year = useMemo(() => new Date().getFullYear(), []);
 
-    const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
-        e.preventDefault();
-        if (query.trim()) console.log("search:", query);
-    };
+    // const onSubmit: React.FormEventHandler<HTMLFormElement> = (e) => {
+    //     e.preventDefault();
+    //     if (query.trim()) console.log("search:", query);
+    // };
 
     return (
         <>
@@ -248,49 +228,5 @@ export default function Header({ brand = "AniFlix" }: { brand?: string }) {
                 </Box>
             </Drawer>
         </>
-    );
-}
-
-function NavButton({
-    label,
-    active,
-    onClick,
-}: {
-    label: string;
-    active: boolean;
-    onClick: () => void;
-}) {
-    return (
-        <Button
-            onClick={onClick}
-            size="small"
-            disableRipple
-            aria-current={active ? "page" : undefined}
-            sx={{
-                position: "relative",
-                px: 1.25,
-                color: active ? "text.primary" : "text.secondary",
-                textTransform: "none",
-                fontWeight: 700,
-                "&:hover": { color: "text.primary", background: "transparent" },
-                "&::after": {
-                    content: '""',
-                    position: "absolute",
-                    left: 8,
-                    right: 8,
-                    bottom: 4,
-                    height: 2,
-                    borderRadius: 1,
-                    backgroundColor: "primary.main",
-                    transform: active ? "scaleX(1)" : "scaleX(0)",
-                    transformOrigin: "left",
-                    transition: "transform 200ms ease",
-                },
-                // hover underline animation for non-active
-                "&:hover::after": { transform: "scaleX(1)" },
-            }}
-        >
-            {label}
-        </Button>
     );
 }

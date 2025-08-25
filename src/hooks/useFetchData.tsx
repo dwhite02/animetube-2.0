@@ -15,13 +15,13 @@ const useFetchData = <TData,>(query: string, variables: object | null = null) =>
     useEffect(() => {
         // if (!variables) return;
 
-        const controller = new AbortController();
+        // const controller = new AbortController();
 
         const options: RequestInit = {
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
             body: JSON.stringify({ query, variables }),
-            signal: controller.signal,
+            // signal: controller.signal,
         };
 
         (async () => {
@@ -42,7 +42,7 @@ const useFetchData = <TData,>(query: string, variables: object | null = null) =>
             }
         })();
 
-        return () => controller.abort();
+        // return () => controller.abort();
     }, [JSON.stringify(variables)]); // stable dep when variables is an object
 
     return { data, error, loading };

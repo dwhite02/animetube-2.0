@@ -1,16 +1,12 @@
 import { useState } from 'react'
-// import './App.css'
-// import Discover from './components/Discover';
 import Footer from '../components/Footer';
-import Header from '../components/Header';
-// import HeroBanner from './components/HeroBanner';
+import Header from '../components/Header/Header';
+import HeroBanner from '../components/HeroBanner';
 import { Box, Container } from "@mui/material";
-// import AnimePreview from './components/Anime';
 import VideoModal from '../components/VideoModal';
 import type { Media } from '../types';
 import MediaList from '../components/MediaList/MediaList';
 import MediaDetailsPanel from '../components/MediaDetailsPanel';
-import HeroBanner from '../components/HeroBanner';
 
 function App() {
     const [modalOpen, setModalOpen] = useState(false);
