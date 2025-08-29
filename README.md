@@ -1,69 +1,38 @@
-# React + TypeScript + Vite
+# AniFlix 🎥✨
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **anime streaming mock platform** built with **React + TypeScript** and styled with **Material-UI (MUI)**.  
+It fetches live data from the **AniList GraphQL API** to display trending anime, preview details, and play trailers in a sleek, interactive UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📌 Features
 
-## Expanding the ESLint configuration
+- **Responsive Header / Navigation**
+  - Sticky navigation with animated underline links.
+  - Search bar (expandable on desktop, drawer on mobile).
+  - Sign-in button (mock for now).
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Hero Banner**
+  - Placeholder for a main featured anime / visual banner.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Dynamic Media Lists**
+  - Powered by **Swiper.js** with smooth coverflow, parallax, and keyboard/mousewheel support.
+  - Displays anime posters with accent colors derived from cover art.
+  - Custom loading skeletons and design-forward error states.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **Hover Cards**
+  - Interactive anime previews showing score, year, type, and genres.
+  - Quick access to play trailers or add to list.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Video Modal**
+  - Plays anime trailers in a cinematic modal.
+  - Includes metadata chips: type, episodes, year, genres, score, and a clear “Trailer” label.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **Footer**
+  - Brand identity with tagline.
+  - Browse, Genre, and Support link sections.
+  - Newsletter subscription (mock).
+  - Social icons (YouTube, Twitter, Instagram, GitHub).
+  - “Back to top” button.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
