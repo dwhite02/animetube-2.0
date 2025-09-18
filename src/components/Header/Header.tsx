@@ -71,6 +71,7 @@ export default function Header({ brand = "AniFlix" }: { brand?: string }) {
                     {/* Brand */}
                     <Typography
                         variant="h6"
+                        component="span"
                         sx={{
                             fontWeight: 800,
                             letterSpacing: 0.3,

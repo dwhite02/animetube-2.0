@@ -94,9 +94,10 @@ export default function MediaList({ sliderId, headline, apiVariables = {}, onPla
 
             {mediaPage && (
                 <>
-                    <Box sx={{ position: "relative" }}>
+                    <Box sx={{ position: "relative", mb: 3 }}>
                         <Typography
                             variant="h5"
+                            component="h3"
                             sx={{
                                 fontWeight: 800,
                                 lineHeight: 1.2,

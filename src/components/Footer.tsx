@@ -107,7 +107,7 @@ export default function Footer({
                                         sx={{ width: 32, height: 32, borderRadius: 1 }}
                                     />
                                 )}
-                                <Typography variant="h6" sx={{ fontWeight: 800 }}>
+                                <Typography variant="h6" component="span" sx={{ fontWeight: 800 }}>
                                     {brand.name}
                                 </Typography>
                             </Box>
