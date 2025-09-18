@@ -173,7 +173,7 @@ export default function MediaList({ sliderId, headline, apiVariables = {}, onPla
                                 content: '""',
                                 position: "absolute",
                                 top: 0,
-                                bottom: 36,
+                                bottom: 0,
                                 width: { xs: 28, sm: 40 },
                                 zIndex: 3,
                                 pointerEvents: "none",
