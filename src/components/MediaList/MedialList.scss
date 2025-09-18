@@ -2,3 +2,7 @@
 @use "swiper/scss/navigation";
 @use "swiper/scss/pagination";
 @use "swiper/scss/effect-coverflow";
+
+.swiper {
+    padding-block: 20px;
+}

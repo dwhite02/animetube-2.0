@@ -263,14 +263,14 @@ export default function MediaList({ sliderId, headline, apiVariables = {}, onPla
                                 Parallax,
                                 Autoplay,
                             ]}
-                            effect="coverflow"
-                            coverflowEffect={{
-                                rotate: 24,
-                                stretch: -10,
-                                depth: 140,
-                                modifier: 1,
-                                slideShadows: false,
-                            }}
+                            // effect="coverflow"
+                            // coverflowEffect={{
+                            //     // rotate: 24,
+                            //     // stretch: -10,
+                            //     // depth: 140,
+                            //     // modifier: 1,
+                            //     // slideShadows: false,
+                            // }}
                             loop={true}
                             parallax
                             freeMode={{ enabled: true, momentumRatio: 0.25 }}
